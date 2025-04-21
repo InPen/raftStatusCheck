@@ -72,3 +72,35 @@ A lightweight tool for GBLS staff to track RAFT application status, see missing 
 ## 5) Wireframes
 
 ![RAFT wireframes](images/FoltawireFrames.jpeg)
+
+---
+
+## 6) Database Entity Relationship Diagram (ERD)
+
+```sql
+erDiagraml
+    PARALEGAL_ATTORNEY ||--o{ MATTER : "has many"
+
+    PARALEGAL_ATTORNEY {
+      uuid id PK
+      string role "paralegal|attorney"
+      string name
+      string email
+      timestamp created_at
+      timestamp updated_at
+    }
+
+    CASE {
+      uuid id PK
+      uuid paralegal_attorney_id FK
+      string client_name
+      string raft_case_number
+      string client_address
+      string raft_status  "Submitted|Under Review|Pending|payed|Denied|Closed"
+      text   case_summary //not text, it's a pdf
+      timestamp last_checked_at
+    }
+```
+![ERD Diagram](images/FoltaERD.jpeg)
+
+---
