@@ -66,3 +66,6 @@ A lightweight tool for GBLS staff to track RAFT application status, see missing 
   ],
   "doc_flags": ["ID", "Case Number", "Rental Property"]
 }
+
+## 5) Wireframes
+/Users/Marine/Desktop/raftStatusCheck/images/FoltawireFrames.jpeg
