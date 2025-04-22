@@ -104,3 +104,16 @@ erDiagraml
 ![ERD Diagram](images/FoltaERD.jpeg)
 
 ---
+
+## 7) Technologies Used 
+- Language: Python 3.10+ 
+- Framework: Flask (server-rendered Jinja pages)
+- Database: SQLite (dev) → PostgreSQL (prod) 
+- ORM: SQLAlchemy (Declarative / SQLModel-style mappings) 
+- Config: python-dotenv for .env 
+- PDF Export: wkhtmltopdf via pdfkit 
+- Auth (later): flask-login / OIDC (Authlib) 
+- Logging/Audit (later): DB table for view/refresh/export actions 
+- Deployment: single process (gunicorn) or container; env vars for secrets
+
+---
