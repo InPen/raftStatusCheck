@@ -9,7 +9,7 @@ db = SQLAlchemy()
 login_manager = LoginManager()
 bcrypt = Bcrypt()
 
-login_manager.login_view = "auth.login"  # we'll create auth blueprint later
+login_manager.login_view = "auth.login"
 login_manager.login_message_category = "info"
 
 def create_app(config_class=Config):
@@ -20,11 +20,10 @@ def create_app(config_class=Config):
     login_manager.init_app(app)
     bcrypt.init_app(app)
 
-    # avoid circular imports
     from app.routes import main_bp
-    # from app.auth import auth_bp  # later
+    from app.auth import auth_bp  # <- we’ll create this file next
 
     app.register_blueprint(main_bp)
-    # app.register_blueprint(auth_bp, url_prefix="/auth")
+    app.register_blueprint(auth_bp, url_prefix="/auth")
 
     return app
