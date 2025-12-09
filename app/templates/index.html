@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center">
+    <h1>RAFT Status Tracker</h1>
+    <p class="lead">Internal tool to track RAFT applications for clients.</p>
+    <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Log In</a>
+    <a href="{{ url_for('auth.register') }}" class="btn btn-outline-secondary">Register</a>
+</div>
+{% endblock %}
