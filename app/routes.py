@@ -1,9 +1,10 @@
 # app/routes.py
 from flask import Blueprint, render_template
+from app.models import Case
 
 main_bp = Blueprint("main", __name__)
 
 @main_bp.route("/")
 def index():
-    return "<h1>RAFT Status Tracker it works! Woohoo🎉</h1>"
-    # later we'll use: return render_template("index.html")
+    cases = Case.query.all()
+    return render_template("index.html", cases=cases)
